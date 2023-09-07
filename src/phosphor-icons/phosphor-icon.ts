@@ -1,5 +1,4 @@
-import type { PhosphorIconVariant } from './phosphor-icon.types';
-
+import type { PhosphorIconVariant } from './phosphor_icon.types';
 export const ALL_PHOSPHOR_ICONS: PhosphorIconVariant[] = [
   'address-book',
   'air-traffic-control',

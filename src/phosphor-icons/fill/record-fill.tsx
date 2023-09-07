@@ -1,3 +1,4 @@
+import * as React from 'react';
 import Svg, { Path, Circle } from 'react-native-svg';
 import type { SvgProps } from 'react-native-svg';
 import { memo } from 'react';
