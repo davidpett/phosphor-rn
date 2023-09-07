@@ -4,7 +4,7 @@ import type {
   PhosphorIconVariant,
   PhosphorIconWeight,
 } from './phosphor-icons/phosphor-icon.types';
-import { useMemo } from 'react';
+import React, { useMemo } from 'react';
 
 const toPascalCase = (value: string) =>
   `${value}`
