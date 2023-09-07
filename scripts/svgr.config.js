@@ -2,7 +2,7 @@ module.exports = {
   plugins: ['@svgr/plugin-svgo', '@svgr/plugin-jsx', '@svgr/plugin-prettier'],
   filenameCase: 'kebab',
   icon: true,
-  jsxRuntime: 'automatic',
+  jsxRuntime: 'classic',
   native: true,
   typescript: true,
   memo: true,
