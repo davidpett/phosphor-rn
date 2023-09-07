@@ -1,0 +1,17 @@
+import Svg, { Path } from 'react-native-svg';
+import type { SvgProps } from 'react-native-svg';
+import { memo } from 'react';
+const SvgPlayCircleBold = (props: SvgProps) => (
+  <Svg
+    fill="black"
+    viewBox="0 0 256 256"
+    width={24}
+    height={24}
+    accessibilityRole="image"
+    {...props}
+  >
+    <Path d="M128 20a108 108 0 1 0 108 108A108.12 108.12 0 0 0 128 20Zm0 192a84 84 0 1 1 84-84 84.09 84.09 0 0 1-84 84Zm40-84a12 12 0 0 1-5.12 9.83l-40 28A12 12 0 0 1 104 156v-56a12 12 0 0 1 18.88-9.83l40 28A12 12 0 0 1 168 128Z" />
+  </Svg>
+);
+const Memo = memo(SvgPlayCircleBold);
+export default Memo;

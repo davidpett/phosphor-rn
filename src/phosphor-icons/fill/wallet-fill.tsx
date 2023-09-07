@@ -1,0 +1,17 @@
+import Svg, { Path } from 'react-native-svg';
+import type { SvgProps } from 'react-native-svg';
+import { memo } from 'react';
+const SvgWalletFill = (props: SvgProps) => (
+  <Svg
+    fill="black"
+    viewBox="0 0 256 256"
+    width={24}
+    height={24}
+    accessibilityRole="image"
+    {...props}
+  >
+    <Path d="M216 72H56a8 8 0 0 1 0-16h136a8 8 0 0 0 0-16H56a24 24 0 0 0-24 24v128a24 24 0 0 0 24 24h160a16 16 0 0 0 16-16V88a16 16 0 0 0-16-16Zm-36 80a12 12 0 1 1 12-12 12 12 0 0 1-12 12Z" />
+  </Svg>
+);
+const Memo = memo(SvgWalletFill);
+export default Memo;

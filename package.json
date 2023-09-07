@@ -14,7 +14,6 @@
     "ios",
     "cpp",
     "*.podspec",
-    "!lib/typescript/example",
     "!ios/build",
     "!android/build",
     "!android/gradle",
@@ -27,13 +26,16 @@
     "!**/.*"
   ],
   "scripts": {
-    "test": "jest",
+    "example": "npm run start --cwd example",
+    "generate": "node ./scripts/generate-icons.js",
     "typecheck": "tsc --noEmit",
-    "lint": "eslint \"**/*.{js,ts,tsx}\"",
+    "lint": "npx eslint src",
+    "lint:fix": "npm run lint -- --fix",
+    "prettier": "npx prettier src --check",
+    "prettier:fix": "npm run prettier -- --write",
+    "format": "npm run prettier:fix && npm run lint:fix",
     "prepack": "bob build",
-    "release": "release-it",
-    "example": "yarn --cwd example",
-    "bootstrap": "yarn example && yarn install"
+    "release": "release-it"
   },
   "keywords": [
     "react-native",
@@ -51,13 +53,19 @@
     "registry": "https://registry.npmjs.org/"
   },
   "devDependencies": {
+    "@babel/core": "^7.22.15",
+    "@babel/preset-env": "^7.22.15",
     "@commitlint/config-conventional": "^17.0.2",
     "@evilmartians/lefthook": "^1.2.2",
+    "@phosphor-icons/core": "^2.0.2",
     "@react-native-community/eslint-config": "^3.0.2",
     "@release-it/conventional-changelog": "^5.0.0",
+    "@svgr/cli": "^8.1.0",
+    "@svgr/core": "^8.1.0",
     "@types/jest": "^28.1.2",
     "@types/react": "~17.0.21",
     "@types/react-native": "0.70.0",
+    "camelcase": "6.3.0",
     "commitlint": "^17.0.2",
     "del-cli": "^5.0.0",
     "eslint": "^8.4.1",
@@ -65,12 +73,12 @@
     "eslint-plugin-prettier": "^4.0.0",
     "jest": "^28.1.1",
     "pod-install": "^0.1.0",
-    "prettier": "^2.0.5",
+    "prettier": "^2.8.8",
     "react": "18.2.0",
     "react-native": "0.72.4",
     "react-native-builder-bob": "^0.21.3",
     "release-it": "^15.0.0",
-    "typescript": "^5.0.2"
+    "typescript": "^5.2.2"
   },
   "resolutions": {
     "@types/react": "17.0.21"
@@ -82,11 +90,9 @@
   "engines": {
     "node": ">= 16.0.0"
   },
-  "packageManager": "^yarn@1.22.15",
   "jest": {
     "preset": "react-native",
     "modulePathIgnorePatterns": [
-      "<rootDir>/example/node_modules",
       "<rootDir>/lib/"
     ]
   },
@@ -119,6 +125,7 @@
       "prettier"
     ],
     "rules": {
+      "react/react-in-jsx-scope": "off",
       "prettier/prettier": [
         "error",
         {
@@ -155,5 +162,8 @@
         }
       ]
     ]
+  },
+  "dependencies": {
+    "react-native-svg": "^13.13.0"
   }
 }

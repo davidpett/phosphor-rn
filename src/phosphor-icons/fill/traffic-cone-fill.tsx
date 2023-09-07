@@ -1,0 +1,17 @@
+import Svg, { Path } from 'react-native-svg';
+import type { SvgProps } from 'react-native-svg';
+import { memo } from 'react';
+const SvgTrafficConeFill = (props: SvgProps) => (
+  <Svg
+    fill="black"
+    viewBox="0 0 256 256"
+    width={24}
+    height={24}
+    accessibilityRole="image"
+    {...props}
+  >
+    <Path d="M232 208h-18.31L153.42 34.75A16 16 0 0 0 138.31 24h-20.62a16 16 0 0 0-15.11 10.74L42.31 208H24a8 8 0 0 0 0 16h208a8 8 0 0 0 0-16ZM95.43 104h65.14l16.7 48H78.73Z" />
+  </Svg>
+);
+const Memo = memo(SvgTrafficConeFill);
+export default Memo;

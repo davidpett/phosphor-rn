@@ -1,6 +1,6 @@
 # phosphor-rn
 
-react native wrapper for phosphor icons
+react native wrapper for [phosphor icons](https://phosphoricons.com)
 
 ## Installation
 
@@ -11,11 +11,11 @@ npm install phosphor-rn
 ## Usage
 
 ```js
-import { multiply } from 'phosphor-rn';
+import { PhoshporIcon } from 'phosphor-rn';
 
 // ...
 
-const result = await multiply(3, 7);
+<PhosphorIcon variant="address-book" weight="duotone" size={48} color="red" />;
 ```
 
 ## Contributing
