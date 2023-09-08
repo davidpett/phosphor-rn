@@ -1,6 +1,6 @@
 {
   "name": "phosphor-rn",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "react native wrapper for phosphor icons",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
