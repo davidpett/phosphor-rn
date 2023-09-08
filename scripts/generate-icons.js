@@ -1,7 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 const child_process = require('child_process');
-const { transform } = require('@svgr/core');
 const camelcase = require('camelcase');
 
 const svgr = path.resolve(
@@ -75,7 +74,7 @@ const generateIcons = () => {
     generateIndex();
     generateTypes();
 
-    child_process.execSync('npm run lint');
+    child_process.execSync('npm run format');
   }
 };
 

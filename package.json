@@ -13,13 +13,14 @@
   "scripts": {
     "example": "npm install --prefix example",
     "generate": "node ./scripts/generate-icons.js",
+    "build": "bob build",
     "typecheck": "tsc --noEmit",
     "lint": "npx eslint src",
     "lint:fix": "npm run lint -- --fix",
     "prettier": "npx prettier src --check",
     "prettier:fix": "npm run prettier -- --write",
     "format": "npm run prettier:fix && npm run lint:fix",
-    "prepack": "bob build",
+    "prepack": "npm run generate && npm run build",
     "release": "release-it"
   },
   "keywords": [
@@ -39,6 +40,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.22.15",
+    "@babel/plugin-transform-react-jsx": "^7.22.15",
     "@babel/preset-env": "^7.22.15",
     "@commitlint/config-conventional": "^17.0.2",
     "@evilmartians/lefthook": "^1.2.2",
@@ -139,7 +141,12 @@
     "output": "lib",
     "targets": [
       "commonjs",
-      "module",
+      [
+        "module",
+        {
+          "configFile": true
+        }
+      ],
       [
         "typescript",
         {
