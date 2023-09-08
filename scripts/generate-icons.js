@@ -54,7 +54,7 @@ const generateTypes = () => {
     [variants, weights].join('\n')
   );
 
-  const allIcons = `import type { PhosphorIconVariant } from './phosphor_icon.types';
+  const allIcons = `import type { PhosphorIconVariant } from './phosphor-icon.types';
 export const ALL_PHOSPHOR_ICONS: PhosphorIconVariant[] = [${icons
     .map((val) => `'${val}'`)
     .join(',')}]`;
